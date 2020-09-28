@@ -1,0 +1,46 @@
+.entering {
+  animation-name: fall;
+  animation-duration: 4s;
+}
+
+.heart {
+  position: fixed;
+  top: -5vh;
+
+  transform: translateY(0);
+  animation: fall 3s linear;
+}
+
+button {
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+  border-radius: 15px;
+  box-shadow: 1px 2px darken(#27ae60, 10%);
+  outline: none;
+  border: 1px solid #27ae60;
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.25s all;
+
+  &:hover {
+    background-color: #2ecc71;
+    letter-spacing: 0.3rem;
+  }
+
+  &.active {
+    border-color: #8e44ad;
+    box-shadow: 1px 2px darken($color: #8e44ad, $amount: 10%);
+
+    &:hover {
+      background-color: #9b59b6;
+    }
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh);
+  }
+}
