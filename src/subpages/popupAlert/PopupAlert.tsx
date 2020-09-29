@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { Wrapper, Progression } from "./style/PopupAlert.styled";
+import React, { useState } from "react";
+import Popup from "./components/Popup";
+import { Button, Input } from "./PopupAlert.styled";
 
-interface Props {
-  message: string;
-  autoCloseTime: number;
-}
+interface Props {}
 
-const PopupAlert = ({ message, autoCloseTime, ...props }: Props) => {
-  const [visible, setVisible] = useState(true);
+const PopupAlert = (props: Props) => {
+  const [message, setMessage] = useState("");
+  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    let timer = setTimeout(() => setVisible(false), autoCloseTime * 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [autoCloseTime]);
+  const handlePopupClose = () => {
+    setVisible(false);
+  };
 
   return (
-    <Wrapper>
+    <>
+      <Input
+        type="text"
+        defaultValue={message}
+        onChange={(value) => setMessage(value.currentTarget.value)}
+      />
+      <Button onClick={() => setVisible(true)}>show popup</Button>
       {visible && (
-        <>
-          <h2>{message}</h2>
-          <Progression duration={autoCloseTime} />
-        </>
+        <Popup message={message} autoCloseTime={10} onTimeout={handlePopupClose} />
       )}
-    </Wrapper>
+    </>
   );
 };
 

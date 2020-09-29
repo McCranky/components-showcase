@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <EmojiRain /> */}
-        <PopupAlert message="Testin message 👻" autoCloseTime={5} />
+        <PopupAlert />
       </header>
     </div>
   );
