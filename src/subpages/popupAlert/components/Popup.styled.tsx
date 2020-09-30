@@ -40,8 +40,8 @@ export const Progression = styled.div<{ duration: number }>`
 `;
 
 export const Message = styled.h2`
-  background-color: #e67e22;
+  background-color: #34495e;
   border-radius: 10px;
-  border: #d35400 2px solid;
+  border: #16a085 2px solid;
   padding: 1rem 1rem;
 `;

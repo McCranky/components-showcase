@@ -16,7 +16,7 @@ export const Button = styled.button`
   font-size: 1.25rem;
   letter-spacing: 0.3rem;
   border-style: solid;
-  /* cursor: pointer; */
+  cursor: pointer;
   background: none;
   color: white;
   outline: none;
